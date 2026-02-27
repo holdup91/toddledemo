@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import { renderToReadableStream } from '@nordcraft/ssr'
+import { renderToReadableStream } from '@toddle/ssr'
 import projectData from '../nordcraft-export-blue_dooku_main_takin-main.json'
 
 const app = new Hono()
