@@ -3,15 +3,15 @@
     "target": "ESNext",
     "module": "ESNext",
     "moduleResolution": "Node",
+    "lib": ["ESNext"],
     "baseUrl": ".",
-    "paths": {
-      "*": ["node_modules/*"]
-    },
     "resolveJsonModule": true,
-    "allowJs": true,
-    "strict": false,
+    "allowSyntheticDefaultImports": true,
     "skipLibCheck": true,
-    "allowSyntheticDefaultImports": true
+    "strict": false,
+    "paths": {
+      "*": ["node_modules/*", "functions/node_modules/*"]
+    }
   },
   "include": ["functions/**/*"]
 }
