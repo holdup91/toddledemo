@@ -1,6 +1,6 @@
 {
   "dependencies": {
     "hono": "latest",
-    "@toddle/ssr": "latest"
+    "@nordcraft/ssr": "latest"
   }
 }
