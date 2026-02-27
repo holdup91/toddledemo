@@ -1,11 +1,22 @@
 import { Hono } from 'hono';
-import { renderToReadableStream } from '@nordcraft/ssr';
-import projectData from '../nordcraft-export-blue.json';  // ← nom corrigé
+// ⚠️ Import RELATIF vers le module dans node_modules
+// @ts-ignore - Ignorer les erreurs TypeScript temporairement
+import { renderToReadableStream } from './node_modules/@nordcraft/ssr/dist/index.js';
+import projectData from '../nordcraft-export-blue.json';
 
 const app = new Hono();
 
 app.all('*', async (c) => {
+  console.log('📥 Requête reçue:', c.req.url);
+  
   try {
+    console.log('📦 projectData chargé:', !!projectData);
+    
+    if (!projectData) {
+      throw new Error('Fichier JSON manquant');
+    }
+
+    console.log('🚀 Tentative de rendu SSR...');
     const htmlStream = await renderToReadableStream(projectData, {
       title: 'Mon App Nordcraft',
       lang: 'fr',
@@ -14,12 +25,14 @@ app.all('*', async (c) => {
       headers: Object.fromEntries(c.req.raw.headers),
     });
     
+    console.log('✅ Rendu réussi');
     return new Response(htmlStream, {
       headers: { 'Content-Type': 'text/html; charset=UTF-8' },
     });
+    
   } catch (error) {
-    console.error('SSR Error:', error);
-    return new Response(`Erreur : ${error.message}`, { status: 500 });
+    console.error('❌ ERREUR:', error);
+    return new Response(`Erreur: ${error.message}`, { status: 500 });
   }
 });
 
