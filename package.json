@@ -1,12 +1,17 @@
 {
   "name": "toddledemo",
   "type": "module",
+  "scripts": {
+    "dev": "bun run src/index.ts",
+    "build": "echo 'No build step required'"
+  },
   "dependencies": {
     "hono": "^4.0.0",
     "@nordcraft/ssr": "latest"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.0.0",
-    "wrangler": "latest"
+    "wrangler": "latest",
+    "bun-types": "latest"
   }
 }
