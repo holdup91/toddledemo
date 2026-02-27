@@ -1,0 +1,12 @@
+{
+  "name": "toddledemo",
+  "type": "module",
+  "dependencies": {
+    "hono": "^4.0.0",
+    "@nordcraft/ssr": "latest"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.0.0",
+    "wrangler": "latest"
+  }
+}
