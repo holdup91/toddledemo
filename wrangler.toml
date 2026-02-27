@@ -2,5 +2,10 @@ name = "toddledemo"
 main = "src/index.ts"
 compatibility_date = "2026-02-27"
 
-[build]
-command = "npm install"
+# Configuration spécifique pour Pages
+[env.production]
+vars = { ENVIRONMENT = "production" }
+
+# Point d'entrée pour le Worker
+[site]
+bucket = "./"
