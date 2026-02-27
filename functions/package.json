@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "hono": "latest",
-    "@nordcraft/ssr": "latest"
-  }
-}
