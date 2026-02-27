@@ -4,7 +4,7 @@ import projectData from '../nordcraft-export-blue_dooku_main_takin-main.json'
 
 const app = new Hono()
 
-app.get('*', async (c) => {
+app.all('*', async (c) => {
   try {
     const htmlStream = await renderToReadableStream(projectData, {
       title: "Mon App Nordcraft",
@@ -17,5 +17,4 @@ app.get('*', async (c) => {
   }
 })
 
-// Indispensable pour Cloudflare Pages
 export const onRequest = (context) => app.fetch(context.request, context.env)
