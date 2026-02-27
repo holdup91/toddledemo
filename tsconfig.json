@@ -1,10 +1,19 @@
 {
   "compilerOptions": {
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
-    "resolveJsonModule": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": ["ESNext"],
+    "baseUrl": ".",
     "paths": {
       "*": ["node_modules/*"]
-    }
-  }
+    },
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "strict": false,
+    "isolatedModules": true,
+    "allowSyntheticDefaultImports": true,
+    "skipLibCheck": true
+  },
+  "include": ["functions/**/*", "index.ts"]
 }
