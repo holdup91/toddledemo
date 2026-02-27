@@ -1,9 +1,8 @@
 import { Hono } from 'hono';
-// ⚠️ Import RELATIF vers le module dans node_modules
-// @ts-ignore - Ignorer les erreurs TypeScript temporairement
-import { renderToReadableStream } from './node_modules/@nordcraft/ssr/dist/index.js';
+// Chemin relatif pour remonter à la racine et entrer dans node_modules
+// @ts-ignore
+import { renderToReadableStream } from '../node_modules/@nordcraft/ssr/dist/index.js';
 import projectData from '../nordcraft-export-blue.json';
-
 const app = new Hono();
 
 app.all('*', async (c) => {
