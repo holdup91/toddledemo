@@ -1,18 +1,10 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "strict": true,
-    "skipLibCheck": true,
-    "lib": ["ESNext", "DOM"],
-    "types": ["@cloudflare/workers-types"],
-    "jsx": "react-jsx",
-    "jsxImportSource": "hono/jsx",
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
     "resolveJsonModule": true,
-    "allowJs": true,
-    "esModuleInterop": true,
-    "isolatedModules": true
-  },
-  "include": ["index.ts"]
+    "paths": {
+      "*": ["node_modules/*"]
+    }
+  }
 }
